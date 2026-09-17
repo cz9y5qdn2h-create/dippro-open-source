@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIPpro — Cahier des charges</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #f0ede8; min-height: 100vh; padding: 40px 20px; }
+  .container { max-width: 780px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #c8a96e; margin-bottom: 8px; }
+  .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 40px; }
+  .section { background: #141414; border: 1px solid #2a2a2a; border-radius: 12px; padding: 28px; margin-bottom: 24px; }
+  .section h2 { font-size: 1.1rem; color: #c8a96e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .section h2 span { background: #c8a96e22; border: 1px solid #c8a96e44; border-radius: 6px; padding: 2px 10px; font-size: 0.8rem; }
+  .group { margin-bottom: 20px; }
+  .group-label { font-size: 0.82rem; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .option { display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; border-radius: 8px; cursor: pointer; transition: background 0.15s; margin-bottom: 4px; }
+  .option:hover { background: #1e1e1e; }
+  .option input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: #c8a96e; flex-shrink: 0; margin-top: 1px; }
+  .option input[type="radio"] { width: 18px; height: 18px; cursor: pointer; accent-color: #c8a96e; flex-shrink: 0; margin-top: 1px; }
+  .option label { cursor: pointer; font-size: 0.93rem; color: #d0ccc5; line-height: 1.4; }
+  .option.checked { background: #c8a96e12; border: 1px solid #c8a96e30; }
+  .priority-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 8px; margin-bottom: 4px; background: #0f0f0f; }
+  .priority-row label { flex: 1; font-size: 0.93rem; color: #d0ccc5; }
+  .priority-row select { background: #1e1e1e; border: 1px solid #333; color: #f0ede8; border-radius: 6px; padding: 4px 8px; font-size: 0.85rem; }
+  .priority-row select option { background: #1e1e1e; }
+  .text-input { width: 100%; background: #0f0f0f; border: 1px solid #2a2a2a; color: #f0ede8; border-radius: 8px; padding: 10px 14px; font-size: 0.9rem; margin-top: 8px; resize: vertical; }
+  .text-input::placeholder { color: #555; }
+  .actions { position: sticky; bottom: 20px; display: flex; gap: 12px; justify-content: flex-end; margin-top: 32px; }
+  .btn { padding: 12px 28px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: all 0.2s; }
+  .btn-primary { background: #c8a96e; color: #0a0a0a; }
+  .btn-primary:hover { background: #d4b87e; }
+  .btn-secondary { background: #1e1e1e; color: #f0ede8; border: 1px solid #333; }
+  .btn-secondary:hover { background: #282828; }
+  .result { background: #0f0f0f; border: 1px solid #c8a96e44; border-radius: 12px; padding: 24px; margin-top: 24px; display: none; }
+  .result h3 { color: #c8a96e; margin-bottom: 16px; }
+  .result pre { white-space: pre-wrap; font-size: 0.85rem; color: #ccc; line-height: 1.7; }
+  .copied { background: #16a34a22 !important; border-color: #16a34a44 !important; color: #4ade80 !important; }
+  .tag-urgent { background: #dc262622; color: #f87171; border: 1px solid #dc262630; border-radius: 4px; padding: 1px 7px; font-size: 0.75rem; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>DIPpro — Cahier des charges</h1>
+  <p class="subtitle">Coche ce qui correspond à ton projet. Je lirai tes réponses et coderai dans l'ordre exact de tes priorités.</p>
+
+  <!-- 1. COMPTES -->
+  <div class="section">
+    <h2>1. Authentification & Comptes <span>Qui fait quoi</span></h2>
+
+    <div class="group">
+      <div class="group-label">Qui crée les comptes franchiseurs ?</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="compte_1" id="compte_1"> <label for="compte_1">L'admin crée les franchiseurs manuellement depuis la console admin</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="compte_2" id="compte_2"> <label for="compte_2">Les franchiseurs s'inscrivent eux-mêmes (page d'inscription publique)</label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">Les franchisés ont-ils accès à l'application ?</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="franchise_acces_1" id="fa1"> <label for="fa1">Non — ce sont juste des contacts dans la liste du franchiseur (email, téléphone)</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="franchise_acces_2" id="fa2"> <label for="fa2">Oui — ils ont un compte avec accès lecture seule à leur DIP</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="franchise_acces_3" id="fa3"> <label for="fa3">Oui — ils reçoivent juste des emails/notifications, pas de compte</label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">L'admin peut-il gérer les franchisés de tous les franchiseurs ?</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="admin_fr_1" id="af1"> <label for="af1">Oui — vue globale de tous les franchisés, tous franchiseurs confondus</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="admin_fr_2" id="af2"> <label for="af2">Non — chaque franchiseur gère ses franchisés lui-même uniquement</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. UPLOAD IA -->
+  <div class="section">
+    <h2>2. Upload & Analyse IA <span>Fonctionnalité principale</span></h2>
+
+    <div class="group">
+      <div class="group-label">Formats de fichiers acceptés</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="fmt_pdf" id="fp"> <label for="fp">PDF</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="fmt_docx" id="fd"> <label for="fd">DOCX (Word)</label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">Taille max des fichiers</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="taille_1" id="t1"> <label for="t1">Moins de 5 Mo (DIPs texte simples)</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="taille_2" id="t2"> <label for="t2">Jusqu'à 20 Mo</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="taille_3" id="t3"> <label for="t3">Jusqu'à 50 Mo (DIPs avec images/tableaux)</label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">Que fait l'IA après l'upload ?</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="ia_1" id="ia1"> <label for="ia1">Elle extrait les 10 sections réglementaires (Loi Doubin)</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="ia_2" id="ia2"> <label for="ia2">Elle donne un score de conformité (0–100%)</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="ia_3" id="ia3"> <label for="ia3">Elle compare avec la version précédente et détecte les changements</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="ia_4" id="ia4"> <label for="ia4">Elle propose des reformulations légales conformes à la loi</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="ia_5" id="ia5"> <label for="ia5">Elle peut générer un DIP complet depuis zéro (sans fichier, juste un formulaire)</label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">Niveaux d'automatisation</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="auto_1" id="a1"> <label for="a1">Niveau 1 — l'utilisateur approuve chaque changement un par un</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="auto_2" id="a2"> <label for="a2">Niveau 2 — l'utilisateur approuve tout en une seule action</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="auto_3" id="a3"> <label for="a3">Niveau 3 — tout est automatique, zéro validation manuelle</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. DASHBOARD -->
+  <div class="section">
+    <h2>3. Dashboard <span>Page d'accueil</span></h2>
+    <div class="group-label" style="margin-bottom:10px">Que doit afficher le dashboard ?</div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="dash_1" id="d1"> <label for="d1">Score de conformité du DIP actif (gros chiffre)</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="dash_2" id="d2"> <label for="d2">Nombre de franchisés actifs</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="dash_3" id="d3"> <label for="d3">Alertes en cours avec statut</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="dash_4" id="d4"> <label for="d4">Historique des versions du DIP</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="dash_5" id="d5"> <label for="d5">Boutons raccourcis vers les actions principales (upload, exporter, etc.)</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="dash_6" id="d6"> <label for="d6">Graphique d'évolution du score dans le temps</label>
+    </div>
+  </div>
+
+  <!-- 4. EXPORT -->
+  <div class="section">
+    <h2>4. Export <span>Documents générés</span></h2>
+
+    <div class="group">
+      <div class="group-label">Formats d'export</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="exp_pdf" id="ep"> <label for="ep">PDF — rapport de conformité avec score et recommandations</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="exp_docx" id="ed"> <label for="ed">DOCX — DIP complet reformulé, prêt à signer</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="exp_excel" id="ee"> <label for="ee">Excel/CSV — liste des franchisés</label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">Que contient l'export ?</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="exp_c1" id="ec1"> <label for="ec1">Le DIP complet avec toutes les sections reformulées</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="exp_c2" id="ec2"> <label for="ec2">Un rapport de synthèse (score, alertes, changements)</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="exp_c3" id="ec3"> <label for="ec3">Le différentiel entre deux versions (avant/après)</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. ALERTES -->
+  <div class="section">
+    <h2>5. Alertes <span>Notifications</span></h2>
+
+    <div class="group">
+      <div class="group-label">Comment les alertes se déclenchent ?</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="alert_1" id="al1"> <label for="al1">Manuellement — l'admin crée une alerte (ex. nouvelle loi, changement réglementaire)</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="alert_2" id="al2"> <label for="al2">Automatiquement — l'IA détecte un point de non-conformité</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="alert_3" id="al3"> <label for="al3">À date fixe — rappel automatique (ex. DIP à renouveler)</label>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">Qui reçoit les alertes ?</div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="alertd_1" id="ad1"> <label for="ad1">Le franchiseur uniquement (dans l'app)</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="alertd_2" id="ad2"> <label for="ad2">Les franchisés par email</label>
+      </div>
+      <div class="option" onclick="toggle(this)">
+        <input type="checkbox" name="alertd_3" id="ad3"> <label for="ad3">Les franchisés par WhatsApp</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. FRANCHISES -->
+  <div class="section">
+    <h2>6. Gestion des franchisés <span>Vue franchiseur</span></h2>
+    <div class="group-label" style="margin-bottom:10px">Le franchiseur peut :</div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="fr_1" id="fr1"> <label for="fr1">Ajouter un franchisé manuellement (nom, email, téléphone, territoire)</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="fr_2" id="fr2"> <label for="fr2">Importer une liste CSV de franchisés</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="fr_3" id="fr3"> <label for="fr3">Voir les dates de contrat de chaque franchisé (début, fin)</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="fr_4" id="fr4"> <label for="fr4">Envoyer le DIP mis à jour par email à tous ses franchisés</label>
+    </div>
+    <div class="option" onclick="toggle(this)">
+      <input type="checkbox" name="fr_5" id="fr5"> <label for="fr5">Voir si chaque franchisé a bien consulté/accepté le DIP</label>
+    </div>
+  </div>
+
+  <!-- 7. PRIORITES -->
+  <div class="section">
+    <h2>7. Priorités <span>Ce qui doit marcher EN PREMIER</span></h2>
+    <div class="group-label" style="margin-bottom:14px">Classe chaque fonctionnalité (1 = urgent, 2 = important, 3 = peut attendre) :</div>
+
+    <div class="priority-row">
+      <label>Upload et analyse IA d'un PDF/DOCX</label>
+      <select name="prio_upload" id="pu"><option value="">—</option><option>1 — Urgent</option><option>2 — Important</option><option>3 — Peut attendre</option></select>
+    </div>
+    <div class="priority-row">
+      <label>Création de comptes franchiseurs par l'admin</label>
+      <select name="prio_comptes" id="pc"><option value="">—</option><option>1 — Urgent</option><option>2 — Important</option><option>3 — Peut attendre</option></select>
+    </div>
+    <div class="priority-row">
+      <label>Dashboard qui s'affiche correctement</label>
+      <select name="prio_dash" id="pd"><option value="">—</option><option>1 — Urgent</option><option>2 — Important</option><option>3 — Peut attendre</option></select>
+    </div>
+    <div class="priority-row">
+      <label>Export PDF/DOCX du DIP</label>
+      <select name="prio_export" id="pe"><option value="">—</option><option>1 — Urgent</option><option>2 — Important</option><option>3 — Peut attendre</option></select>
+    </div>
+    <div class="priority-row">
+      <label>Gestion des franchisés (ajout, notifications)</label>
+      <select name="prio_fr" id="pfr"><option value="">—</option><option>1 — Urgent</option><option>2 — Important</option><option>3 — Peut attendre</option></select>
+    </div>
+    <div class="priority-row">
+      <label>Alertes automatiques</label>
+      <select name="prio_alerts" id="pal"><option value="">—</option><option>1 — Urgent</option><option>2 — Important</option><option>3 — Peut attendre</option></select>
+    </div>
+    <div class="priority-row">
+      <label>Génération IA d'un DIP depuis zéro</label>
+      <select name="prio_gen" id="pg"><option value="">—</option><option>1 — Urgent</option><option>2 — Important</option><option>3 — Peut attendre</option></select>
+    </div>
+  </div>
+
+  <!-- 8. NOTES LIBRES -->
+  <div class="section">
+    <h2>8. Notes libres <span>Tout ce que j'ai oublié</span></h2>
+    <textarea class="text-input" rows="5" id="notes" placeholder="Décris ici tout ce qui manque, ce qui t'agace, ce que tu veux absolument, des exemples d'apps similaires que tu aimes…"></textarea>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-secondary" onclick="resetAll()">Tout effacer</button>
+    <button class="btn btn-primary" onclick="generateSummary()">Générer le résumé →</button>
+  </div>
+
+  <div class="result" id="result">
+    <h3>Résumé de tes réponses</h3>
+    <pre id="result-text"></pre>
+    <button class="btn btn-primary" style="margin-top:16px" onclick="copySummary()">Copier le résumé</button>
+  </div>
+</div>
+
+<script>
+function toggle(el) {
+  const cb = el.querySelector('input[type="checkbox"]');
+  if (!cb) return;
+  cb.checked = !cb.checked;
+  el.classList.toggle('checked', cb.checked);
+}
+
+function getChecked(name) {
+  return [...document.querySelectorAll(`input[name="${name}"]`)].filter(i => i.checked).map(i => i.nextElementSibling.textContent.trim());
+}
+
+function getVal(id) {
+  const el = document.getElementById(id);
+  return el ? el.value : '';
+}
+
+function generateSummary() {
+  const lines = [];
+
+  lines.push('=== CAHIER DES CHARGES DIPPRO ===\n');
+
+  lines.push('1. COMPTES');
+  const c1 = getChecked('compte_1'); if(c1.length) lines.push('  Création franchiseurs: ' + c1.join(', '));
+  const c2 = getChecked('compte_2'); if(c2.length) lines.push('  Inscription publique: ' + c2.join(', '));
+  const fa = ['franchise_acces_1','franchise_acces_2','franchise_acces_3'].flatMap(n => getChecked(n));
+  if(fa.length) lines.push('  Accès franchisés: ' + fa.join(' | '));
+  const af = ['admin_fr_1','admin_fr_2'].flatMap(n => getChecked(n));
+  if(af.length) lines.push('  Admin/franchisés: ' + af.join(' | '));
+
+  lines.push('\n2. UPLOAD & IA');
+  const fmts = ['fmt_pdf','fmt_docx'].flatMap(n => getChecked(n));
+  if(fmts.length) lines.push('  Formats: ' + fmts.join(', '));
+  const tailles = ['taille_1','taille_2','taille_3'].flatMap(n => getChecked(n));
+  if(tailles.length) lines.push('  Taille max: ' + tailles.join(', '));
+  const ias = ['ia_1','ia_2','ia_3','ia_4','ia_5'].flatMap(n => getChecked(n));
+  if(ias.length) ias.forEach(ia => lines.push('  ✓ ' + ia));
+  const autos = ['auto_1','auto_2','auto_3'].flatMap(n => getChecked(n));
+  if(autos.length) autos.forEach(a => lines.push('  ✓ ' + a));
+
+  lines.push('\n3. DASHBOARD');
+  const dashs = ['dash_1','dash_2','dash_3','dash_4','dash_5','dash_6'].flatMap(n => getChecked(n));
+  if(dashs.length) dashs.forEach(d => lines.push('  ✓ ' + d));
+
+  lines.push('\n4. EXPORT');
+  const exps = ['exp_pdf','exp_docx','exp_excel','exp_c1','exp_c2','exp_c3'].flatMap(n => getChecked(n));
+  if(exps.length) exps.forEach(e => lines.push('  ✓ ' + e));
+
+  lines.push('\n5. ALERTES');
+  const alerts = ['alert_1','alert_2','alert_3','alertd_1','alertd_2','alertd_3'].flatMap(n => getChecked(n));
+  if(alerts.length) alerts.forEach(a => lines.push('  ✓ ' + a));
+
+  lines.push('\n6. FRANCHISÉS');
+  const frs = ['fr_1','fr_2','fr_3','fr_4','fr_5'].flatMap(n => getChecked(n));
+  if(frs.length) frs.forEach(f => lines.push('  ✓ ' + f));
+
+  lines.push('\n7. PRIORITÉS');
+  const prios = [
+    ['pu', 'Upload IA'],
+    ['pc', 'Création comptes'],
+    ['pd', 'Dashboard'],
+    ['pe', 'Export'],
+    ['pfr', 'Franchisés'],
+    ['pal', 'Alertes'],
+    ['pg', 'Génération IA']
+  ];
+  prios.forEach(([id, label]) => {
+    const v = getVal(id);
+    if(v) lines.push('  ' + label + ': ' + v);
+  });
+
+  const notes = document.getElementById('notes').value.trim();
+  if(notes) {
+    lines.push('\n8. NOTES LIBRES');
+    lines.push(notes);
+  }
+
+  const text = lines.join('\n');
+  document.getElementById('result-text').textContent = text;
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+
+function copySummary() {
+  const text = document.getElementById('result-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copié !';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function resetAll() {
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => { cb.checked = false; cb.closest('.option')?.classList.remove('checked'); });
+  document.querySelectorAll('select').forEach(s => s.value = '');
+  document.getElementById('notes').value = '';
+  document.getElementById('result').style.display = 'none';
+}
+</script>
+</body>
+</html>

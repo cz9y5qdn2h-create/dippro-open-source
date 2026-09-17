@@ -1,0 +1,548 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "loading": "Loading…",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "download": "Download",
+    "export": "Export",
+    "import": "Import",
+    "send": "Send",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "generate": "Generate",
+    "validate": "Validate",
+    "ignore": "Ignore",
+    "activate": "Activate",
+    "revoke": "Revoke",
+    "yes": "Yes",
+    "no": "No",
+    "all": "All",
+    "none": "None",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "validated": "Validated",
+      "ignored": "Ignored",
+      "trial": "Trial",
+      "expired": "Expired"
+    },
+    "conformity": {
+      "compliant": "Compliant",
+      "toCheck": "To review",
+      "nonCompliant": "Non-compliant"
+    },
+    "roles": {
+      "admin": "Admin",
+      "franchiseur": "Franchisor"
+    },
+    "security": "Secure data · GDPR-scoped subprocessors"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "myDip": "My DIP",
+    "newVersion": "New version",
+    "generateDip": "Generate a DIP",
+    "myContract": "My contract",
+    "newContractVersion": "New contract version",
+    "generateContract": "Generate a contract",
+    "alerts": "Alerts",
+    "history": "History",
+    "franchisees": "Franchisees",
+    "export": "Export",
+    "docMonitoring": "Doc monitoring",
+    "settings": "Settings",
+    "admin": "Admin",
+    "contact": "Contact Iralink",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "logout": "Log out",
+    "analytics": "Analytics"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "subtitle": "No account yet?",
+      "startTrial": "Start free trial",
+      "email": "Email address",
+      "emailPlaceholder": "you@company.com",
+      "password": "Password",
+      "submit": "Sign in",
+      "loading": "Signing in…",
+      "consent": "By signing in, you confirm that you have read and accept the",
+      "consentCgu": "Terms of Use",
+      "consentPrivacy": "privacy policy",
+      "consentLegal": "legal notice",
+      "consentOf": "of DIPpro.",
+      "tagline": "DIP compliance, effortlessly.",
+      "taglineDesc": "Analyse, correct, and share your Pre-Contractual Information Documents in full compliance with French franchise law (Loi Doubin).",
+      "features": [
+        "AI analysis of 10 regulatory sections",
+        "Real-time compliance alerts",
+        "Automatic notifications to franchisees"
+      ],
+      "errors": {
+        "config": "Configuration error. Please contact the administrator.",
+        "invalid": "Incorrect email or password.",
+        "generic": "Sign-in error"
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Already have an account?",
+      "login": "Sign in",
+      "trialBadge": "5-day free trial",
+      "tagline": "Your compliant DIP in minutes.",
+      "benefits": [
+        "Immediate AI analysis of your sections",
+        "Section-by-section corrections",
+        "No credit card required",
+        "Full access for 5 days"
+      ],
+      "steps": {
+        "company": "Company",
+        "contact": "Contact",
+        "security": "Security"
+      },
+      "fields": {
+        "companyName": "Company / Brand name",
+        "companyNameHelper": "Name that will appear on your DIPs",
+        "companyNamePlaceholder": "My Franchise Ltd",
+        "email": "Email address",
+        "emailPlaceholder": "you@company.com",
+        "phone": "Phone",
+        "phonePlaceholder": "+33 6 12 34 56 78",
+        "password": "Password",
+        "confirmPassword": "Confirm password"
+      },
+      "passwordStrength": {
+        "weak": "Weak",
+        "medium": "Medium",
+        "good": "Good",
+        "excellent": "Excellent"
+      },
+      "consent": {
+        "cgu": "I accept the Terms of Use and privacy policy",
+        "ai": "I understand that AI analyses are indicative and do not replace legal advice",
+        "marketing": "I agree to receive updates about DIPpro (optional)"
+      },
+      "submit": "Create my account",
+      "continue": "Continue",
+      "waitlist": "Not ready yet? Join the waitlist",
+      "creatingAccount": "Creating account…",
+      "errors": {
+        "passwordMismatch": "Passwords do not match",
+        "passwordTooShort": "Password must be at least 8 characters",
+        "acceptCgu": "You must accept the Terms of Use",
+        "acceptAi": "You must accept the AI disclaimer"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Overview · DIP compliance",
+    "greeting": "Hello, {{name}}",
+    "actions": {
+      "newVersion": "New version",
+      "generate": "Generate",
+      "generateContract": "Generate a contract",
+      "history": "History",
+      "contact": "Contact Iralink"
+    },
+    "noDip": {
+      "title": "No DIP imported",
+      "desc": "Import your Pre-Contractual Information Document to benefit from AI analysis.",
+      "cta": "Import my DIP"
+    },
+    "stats": {
+      "totalSections": "Total sections",
+      "compliant": "Compliant",
+      "toCheck": "To review",
+      "nonCompliant": "Non-compliant"
+    },
+    "sectionsToImprove": "section(s) to improve",
+    "aiCorrectionHint": "AI can analyse each non-compliant section and suggest a correction.",
+    "generateAiCorrections": "Generate AI corrections",
+    "claudeAnalyzing": "Claude is analysing…",
+    "noSections": "No sections available",
+    "alerts": "Alerts",
+    "noAlerts": "No pending alerts",
+    "lastImport": "Last import"
+  },
+  "dip": {
+    "pageTitle": "My DIP",
+    "pageSubtitle": "Import or generate your Pre-Contractual Information Document",
+    "noDip": {
+      "title": "No DIP imported",
+      "desc": "Import your first DIP to start the compliance analysis.",
+      "importBtn": "Import a DIP",
+      "generateBtn": "Generate with AI"
+    },
+    "actions": {
+      "docx": "DOCX",
+      "share": "Share",
+      "analytics": "Analytics",
+      "update": "Update",
+      "importNew": "Import a DIP",
+      "generate": "Generate with AI"
+    },
+    "share": {
+      "title": "Franchisee portal — secure sharing",
+      "desc": "Generate a unique link allowing your franchisee candidates to view the DIP online.",
+      "generate": "Generate share link",
+      "copy": "Copy link",
+      "revoke": "Revoke access",
+      "revokeConfirm": "Revoke the share link? Franchisees will no longer be able to access the document.",
+      "linkLabel": "Share link"
+    },
+    "tabs": {
+      "view": "DIP view",
+      "generate": "Generate with AI"
+    },
+    "form": {
+      "steps": {
+        "identity": "Identity & History",
+        "network": "Network & Accounts",
+        "brand": "Brand, Finances & Contract",
+        "forecasts": "Forecasts"
+      },
+      "fields": {
+        "companyName": "Company name",
+        "legalForm": "Legal form",
+        "capital": "Capital (€)",
+        "rcsNumber": "Company registration no.",
+        "rcsCity": "Registration city",
+        "headquarters": "Registered office",
+        "directors": "Directors"
+      }
+    },
+    "conformityScore": "Compliance score",
+    "sections": "Document sections",
+    "score": "Score"
+  },
+  "upload": {
+    "title": "Import a DIP",
+    "desc": "Upload your DIP in PDF or DOCX format. AI automatically detects regulatory sections.",
+    "namePlaceholder": "DIP 2025 — My Franchise",
+    "nameLabel": "DIP name",
+    "steps": {
+      "upload": "Uploading file to secure storage…",
+      "analyze": "Claude is analysing your DIP… (30 to 60 seconds)",
+      "activate": "Activation in progress…",
+      "certificate": "Generating certificate…"
+    },
+    "status": {
+      "uploading": "Uploading…",
+      "analyzing": "AI analysis in progress…",
+      "activating": "Activating…",
+      "done": "Analysis complete",
+      "doneDesc": "Your DIP has been successfully processed",
+      "activated": "New version activated",
+      "activatedDesc": "DIP analysed and saved",
+      "certificateGenerated": "Amendment certificate generated"
+    },
+    "cta": {
+      "viewDip": "View DIP",
+      "importAnother": "Import another"
+    }
+  },
+  "alerts": {
+    "title": "Alerts & Corrections",
+    "subtitle": "Automatic detections and AI corrections to update your DIP",
+    "pendingCount": "AI correction(s) pending validation",
+    "applyHint": "Click \"Apply\" to update the section in your active DIP.",
+    "showAiOnly": "Show AI corrections only",
+    "filters": {
+      "all": "All",
+      "pending": "Pending",
+      "validated": "Validated",
+      "ignored": "Ignored"
+    },
+    "sources": {
+      "ai": "AI corrections",
+      "manual": "Manual"
+    },
+    "checkRenewal": "Check renewal",
+    "empty": {
+      "title": "No pending alerts",
+      "desc": "Your DIP is up to date."
+    },
+    "actions": {
+      "apply": "Apply",
+      "ignore": "Ignore",
+      "validate": "Validate"
+    }
+  },
+  "history": {
+    "title": "Change history",
+    "subtitle": "Full audit log with timestamps",
+    "empty": {
+      "title": "No history",
+      "desc": "Changes will appear here after you import your first DIP."
+    },
+    "events": {
+      "initialImport": "Initial import",
+      "newVersionUploaded": "New version uploaded",
+      "newVersionActivated": "New version activated",
+      "aiGenerated": "DIP generated by AI",
+      "sectionModified": "Section modified",
+      "alertValidated": "Alert validated",
+      "alertIgnored": "Alert ignored",
+      "alertCreated": "Alert created",
+      "notificationSent": "Notification sent"
+    },
+    "before": "Before",
+    "after": "After"
+  },
+  "franchisees": {
+    "title": "Franchisees",
+    "actions": {
+      "notify": "Notify",
+      "exportCsv": "Export CSV",
+      "importCsv": "Import CSV",
+      "add": "Add"
+    },
+    "searchPlaceholder": "Search by name, email or territory…",
+    "filters": {
+      "all": "All",
+      "active": "Active",
+      "starting": "Starting",
+      "inactive": "Inactive"
+    },
+    "modal": {
+      "addTitle": "Add a franchisee",
+      "editTitle": "Edit franchisee"
+    },
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email",
+      "territory": "Territory",
+      "status": "Status",
+      "contractStart": "Contract start",
+      "contractEnd": "Contract end",
+      "whatsapp": "WhatsApp",
+      "notifEmail": "Notification email"
+    },
+    "placeholders": {
+      "fullName": "John Smith",
+      "email": "john@franchise.com",
+      "territory": "London"
+    },
+    "statuses": {
+      "active": "Active",
+      "starting": "Starting up",
+      "inactive": "Inactive"
+    },
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "territory": "Territory",
+      "contract": "Contract",
+      "status": "Status",
+      "notify": "Notify"
+    },
+    "notify": {
+      "title": "Notify franchisees",
+      "defaultMessage": "Your DIP has been updated. Please review it."
+    },
+    "empty": "No franchisees registered."
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Profile, automation and notification preferences",
+    "sections": {
+      "appearance": "Appearance",
+      "security": "Security",
+      "profile": "Franchisor information",
+      "automation": "Automation level",
+      "notifications": "Notifications",
+      "emailService": "Email delivery (Resend)"
+    },
+    "theme": {
+      "label": "Interface theme",
+      "description": "Choose the look of your DIPpro workspace"
+    },
+    "password": {
+      "label": "Change your login password",
+      "new": "New password",
+      "confirm": "Confirm new password"
+    },
+    "profile": {
+      "company": "Company / Brand",
+      "phone": "Phone",
+      "address": "Registered address"
+    },
+    "automation": {
+      "levels": {
+        "manual": { "label": "Manual", "desc": "Full control" },
+        "hybrid": { "label": "Hybrid", "desc": "Semi-automatic" },
+        "auto": { "label": "Auto", "desc": "Fully automatic" }
+      }
+    },
+    "notifications": {
+      "channels": "Active channels",
+      "email": "Email",
+      "inApp": "In-app",
+      "sms": "SMS",
+      "frequency": "Frequency",
+      "immediate": "Immediate",
+      "dailyDigest": "Daily digest",
+      "weeklyDigest": "Weekly digest"
+    }
+  },
+  "export": {
+    "title": "Export",
+    "subtitle": "Download your DIP, compliance report and change history",
+    "noDip": {
+      "title": "No DIP available",
+      "desc": "Import a DIP to access exports."
+    },
+    "types": {
+      "docx": {
+        "title": "Reformulated DIP (Word)",
+        "badge": "DOCX"
+      },
+      "pdf": {
+        "title": "Compliance report (PDF)",
+        "badge": "PDF"
+      },
+      "json": {
+        "title": "Full JSON export",
+        "badge": "JSON"
+      }
+    }
+  },
+  "analytics": {
+    "title": "Reading analytics",
+    "stats": {
+      "visits": "Visits",
+      "avgTime": "Avg. time",
+      "lastVisit": "Last visit",
+      "topSection": "Top section"
+    },
+    "empty": {
+      "title": "No reading data",
+      "desc": "Analytics populate as soon as a candidate views the DIP via the share link."
+    },
+    "generateLink": "Generate share link",
+    "engagementTitle": "Engagement by section",
+    "insight": "Commercial insight: Candidates spend the most time on §{{section}}",
+    "legend": {
+      "high": "> 70% open rate",
+      "medium": "40–70%",
+      "low": "< 40%"
+    },
+    "visitsHistory": "Visit history",
+    "sections": "sections"
+  },
+  "shared": {
+    "brand": "DIPpro",
+    "byIralink": "by Iralink",
+    "officialDoc": "Official document",
+    "loading": "Loading document…",
+    "notFound": {
+      "title": "Document not found",
+      "desc": "This link is no longer valid or has been revoked."
+    },
+    "docTitle": "Pre-Contractual Information Document",
+    "updatedOn": "Updated on {{date}}",
+    "conformityScore": "Compliance score",
+    "sectionsTitle": "Document sections",
+    "generatedBy": "Document generated and verified by",
+    "badges": {
+      "law": "Loi Doubin 1989",
+      "rgpd": "GDPR-scoped subprocessors",
+      "timestamped": "Timestamped"
+    },
+    "legalNotice": "Document compliant with Loi Doubin — Art. L.330-3 French Commercial Code"
+  },
+  "onboarding": {
+    "skip": "Skip",
+    "cta": "Get started",
+    "slide1": {
+      "title": "Welcome to DIPpro",
+      "desc": "The platform that automates your Loi Doubin compliance. Analyse, correct, and share your Pre-Contractual Information Documents in just a few clicks."
+    },
+    "slide2": {
+      "title": "Import your DIP in 1 click",
+      "desc": "Upload your DIP in PDF or DOCX format. Artificial intelligence automatically analyses the 10 regulatory sections of the Loi Doubin in under 60 seconds."
+    },
+    "slide3": {
+      "title": "Real-time compliance score",
+      "desc": "Get a full analysis of your 10 regulatory sections with a precise compliance score. Instantly identify what needs correcting."
+    },
+    "slide4": {
+      "title": "Automatic AI corrections",
+      "desc": "Claude detects non-compliance issues and suggests precise corrections, section by section. One click to apply the correction to your DIP."
+    },
+    "slide5": {
+      "title": "Share with your franchisees",
+      "desc": "Generate a unique secure sharing link to let each franchisee candidate view your DIP online, with reading tracking."
+    },
+    "slide6": {
+      "title": "You're all set!",
+      "desc": "Start by importing your first DIP or generate one with AI. Your Loi Doubin compliance is just a few clicks away."
+    }
+  },
+  "monitoring": {
+    "title": "Doc Monitoring",
+    "subtitle": "Monitor your regulatory sources and detect changes impacting your DIP",
+    "addSource": "Add a source",
+    "empty": {
+      "title": "No sources monitored",
+      "desc": "Add URLs to monitor and be automatically alerted to regulatory changes that could impact your DIP.",
+      "cta": "Add my first source"
+    },
+    "suggestions": {
+      "title": "Suggested sources"
+    },
+    "results": {
+      "title": "Recent results",
+      "subtitle": "Last 10 monitoring checks",
+      "empty": "No checks performed yet. Click \"Check\" to run an analysis."
+    }
+  },
+  "admin": {
+    "title": "Admin Console",
+    "subtitle": "Global management of the DIPpro platform",
+    "tabs": {
+      "dashboard": "Dashboard",
+      "franchisors": "Franchisors",
+      "allDips": "All DIPs",
+      "activity": "Activity",
+      "waitlist": "Waitlist"
+    },
+    "stats": {
+      "franchisors": "Franchisors",
+      "dipsAnalyzed": "DIPs analysed",
+      "franchisees": "Franchisees",
+      "pendingAlerts": "Pending alerts",
+      "avgScore": "Avg. score"
+    },
+    "recentActivity": "Recent activity",
+    "users": {
+      "createAccount": "Create account",
+      "resetPassword": "Reset password",
+      "unlockAccess": "Unlock access",
+      "deleteUser": "Delete"
+    },
+    "waitlist": {
+      "statuses": {
+        "pending": "Pending",
+        "contacted": "Contacted",
+        "converted": "Converted",
+        "refused": "Declined"
+      }
+    }
+  }
+}

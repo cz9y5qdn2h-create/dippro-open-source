@@ -1,0 +1,50 @@
+User-agent: *
+Allow: /
+Allow: /waitlist
+Allow: /login
+Allow: /register
+Allow: /cgu
+Allow: /privacy
+Allow: /mentions-legales
+Allow: /cookies
+Allow: /dip/partage/
+
+Disallow: /dashboard
+Disallow: /dip/upload
+Disallow: /dip/generate
+Disallow: /alerts
+Disallow: /history
+Disallow: /franchisees
+Disallow: /settings
+Disallow: /export
+Disallow: /admin
+Disallow: /monitoring
+Disallow: /integrations
+Disallow: /analytics
+Disallow: /api/
+
+Sitemap: https://iralink-agency.dippro.business/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /

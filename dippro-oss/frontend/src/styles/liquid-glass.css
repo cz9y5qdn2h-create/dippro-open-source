@@ -1,0 +1,508 @@
+/* ================================================================
+   IRALINK — Liquid Glass Design System
+   Composants lg-* — pilotés par les CSS vars de index.css,
+   compatibles avec les 3 thèmes (sobre / glass / lumière).
+   ================================================================ */
+
+/* ── lg-card ────────────────────────────────────────────────── */
+.lg-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur)) saturate(var(--sat));
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(var(--sat));
+  border: 1px solid var(--glass-brd);
+  border-top-color: var(--glass-brd-top);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow), var(--inset);
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.lg-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, rgb(var(--gold) / .55), transparent);
+  pointer-events: none;
+}
+/* Aucun déplacement au survol : une carte qui se soulève fait glisser son
+   reflet supérieur et son ombre hors de son cadre, ce qui donne l'impression
+   que le contenu « sort » de sa case. Le retour visuel passe uniquement par
+   la bordure et l'ombre, sans bouger la mise en page. */
+.lg-card:hover {
+  box-shadow: var(--glass-hover);
+  border-color: var(--glass-brd-top);
+}
+
+/* ── lg-sidebar ─────────────────────────────────────────────── */
+.lg-sidebar {
+  background: var(--sidebar-bg) !important;
+  backdrop-filter: blur(var(--blur)) saturate(var(--sat)) !important;
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(var(--sat)) !important;
+  border-right: 1px solid var(--glass-brd) !important;
+  box-shadow: var(--inset) !important;
+}
+
+/* ── lg-logo-pill ───────────────────────────────────────────── */
+.lg-logo-pill {
+  background: var(--row-hover);
+  border: 1px solid var(--glass-brd);
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+/* ── lg-nav-link ────────────────────────────────────────────── */
+.lg-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  color: rgb(var(--text-muted));
+  transition: color 0.3s ease, background 0.3s ease, transform 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+}
+.lg-nav-link:hover {
+  color: rgb(var(--text-primary));
+  background: var(--row-hover);
+}
+
+/* ── lg-nav-active ──────────────────────────────────────────── */
+.lg-nav-active {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgb(var(--gold));
+  background: var(--row-hover);
+  border: 1px solid var(--glass-brd);
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+/* ── lg-user-chip ───────────────────────────────────────────── */
+.lg-user-chip {
+  background: var(--row-bg);
+  border: 1px solid var(--glass-brd);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+/* ── lg-avatar ──────────────────────────────────────────────── */
+.lg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgb(var(--gold) / .15);
+  border: 1px solid rgb(var(--gold) / .30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── lg-metric ──────────────────────────────────────────────── */
+.lg-metric {
+  font-family: 'Geist', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(var(--text-primary));
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.lg-metric-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgb(var(--text-muted));
+}
+
+/* ── lg-input ───────────────────────────────────────────────── */
+.lg-input {
+  background: var(--field-bg);
+  border: 1px solid var(--glass-brd);
+  border-radius: 12px;
+  color: rgb(var(--text-primary));
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  display: block;
+}
+.lg-input::placeholder {
+  color: rgb(var(--text-muted));
+}
+.lg-input:focus {
+  border-color: rgb(var(--gold) / .52);
+  background: var(--row-hover);
+  box-shadow: 0 0 0 3px rgb(var(--gold) / .10);
+}
+
+/* ── lg-label ───────────────────────────────────────────────── */
+.lg-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgb(var(--text-muted));
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ── lg-btn-primary ─────────────────────────────────────────── */
+.lg-btn-primary {
+  background: rgb(var(--gold) / .14);
+  border: 1px solid rgb(var(--gold) / .40);
+  border-radius: 10px;
+  color: rgb(var(--gold));
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.lg-btn-primary:hover {
+  background: rgb(var(--gold) / .22);
+  box-shadow: 0 4px 16px rgb(var(--gold) / .18);
+}
+.lg-btn-primary:active {
+  transform: scale(0.97);
+}
+.lg-btn-primary:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── lg-btn-ghost ───────────────────────────────────────────── */
+.lg-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--glass-brd);
+  border-radius: 10px;
+  color: rgb(var(--text-muted));
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.lg-btn-ghost:hover {
+  background: var(--row-hover);
+  color: rgb(var(--text-primary));
+  border-color: var(--glass-brd-top);
+}
+
+/* ── lg-badge-* ─────────────────────────────────────────────── */
+.lg-badge {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+.lg-badge-gold    { background: rgb(var(--gold) / .12);    border: 1px solid rgb(var(--gold) / .30);    color: rgb(var(--gold)); }
+.lg-badge-success { background: rgb(var(--success) / .10); border: 1px solid rgb(var(--success) / .25); color: rgb(var(--success)); }
+.lg-badge-warn    { background: rgb(var(--gold) / .10);    border: 1px solid rgb(var(--gold) / .25);    color: rgb(var(--gold)); }
+.lg-badge-danger  { background: rgb(var(--danger) / .10);  border: 1px solid rgb(var(--danger) / .25);  color: rgb(var(--danger)); }
+
+/* ── lg-alert-* ─────────────────────────────────────────────── */
+.lg-alert-warn    { background: rgb(var(--gold) / .05);    border: 1px solid rgb(var(--gold) / .18);    border-radius: 16px; }
+.lg-alert-success { background: rgb(var(--success) / .05); border: 1px solid rgb(var(--success) / .18); border-radius: 16px; }
+.lg-alert-danger  { background: rgb(var(--danger) / .05);  border: 1px solid rgb(var(--danger) / .18);  border-radius: 16px; }
+.lg-alert-gold    { background: rgb(var(--gold) / .05);    border: 1px solid rgb(var(--gold) / .18);    border-radius: 16px; }
+
+/* ── lg-step ────────────────────────────────────────────────── */
+.lg-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--row-bg);
+  border: 1px solid var(--glass-brd);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+}
+.lg-step:hover {
+  background: var(--row-hover);
+  border-color: var(--glass-brd-top);
+}
+.lg-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgb(var(--gold) / .10);
+  border: 1px solid rgb(var(--gold) / .28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: rgb(var(--gold));
+  flex-shrink: 0;
+}
+
+/* ── lg-row ─────────────────────────────────────────────────── */
+.lg-row {
+  display: flex;
+  align-items: center;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: var(--row-bg);
+  border: 1px solid var(--glass-brd);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.lg-row:hover {
+  background: var(--row-hover);
+  border-color: var(--glass-brd-top);
+}
+
+/* ── lg-divider ─────────────────────────────────────────────── */
+.lg-divider {
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, rgb(var(--gold) / .22), transparent);
+  margin: 16px 0;
+  border: none;
+}
+
+/* ── Typographie ────────────────────────────────────────────── */
+.lg-greeting {
+  font-family: 'Geist', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgb(var(--text-primary));
+  letter-spacing: -0.01em;
+}
+.lg-section-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: rgb(var(--text-primary));
+}
+.lg-subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  color: rgb(var(--text-secondary));
+}
+.lg-gold   { color: rgb(var(--gold)); }
+.lg-white  { color: rgb(var(--text-primary)); }
+.lg-muted  { color: rgb(var(--text-muted)); }
+
+/* ── lg-tag ─────────────────────────────────────────────────── */
+.lg-tag {
+  font-family: 'Geist Mono', monospace;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgb(var(--gold) / .60);
+  background: rgb(var(--gold) / .06);
+  border: 1px solid rgb(var(--gold) / .14);
+  border-radius: 6px;
+  padding: 2px 7px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── lg-pill-btn ────────────────────────────────────────────── */
+.lg-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 13px;
+  background: var(--row-bg);
+  backdrop-filter: blur(var(--blur)) saturate(var(--sat));
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(var(--sat));
+  border: 1px solid var(--glass-brd);
+  border-radius: 50px;
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(var(--text-secondary));
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--inset);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.lg-pill-btn:hover {
+  background: var(--row-hover);
+  color: rgb(var(--text-primary));
+}
+.lg-pill-btn-gold {
+  background: rgb(var(--gold) / .12);
+  border-color: rgb(var(--gold) / .35);
+  color: rgb(var(--gold));
+  box-shadow: var(--inset);
+}
+.lg-pill-btn-gold:hover {
+  background: rgb(var(--gold) / .20);
+  color: rgb(var(--gold-light));
+}
+
+/* ── lg-card-header ─────────────────────────────────────────── */
+.lg-card-header {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgb(var(--text-secondary));
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.lg-card-header-pill {
+  font-family: 'Geist', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgb(var(--gold) / .12);
+  border: 1px solid rgb(var(--gold) / .30);
+  color: rgb(var(--gold) / .75);
+  text-transform: none;
+  letter-spacing: 0;
+  box-shadow: inset 0 1px 0 rgb(var(--gold) / .10);
+}
+
+/* ── lg-metric-card ─────────────────────────────────────────── */
+.lg-metric-val {
+  font-family: 'Geist Mono', monospace;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(var(--text-primary) / .88);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.lg-metric-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 6px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 20px;
+}
+.lg-metric-tag-gold  { background: rgb(var(--gold) / .15);    color: rgb(var(--gold)); }
+.lg-metric-tag-green { background: rgb(var(--success) / .12); color: rgb(var(--success)); }
+.lg-metric-tag-red   { background: rgb(var(--danger) / .12);  color: rgb(var(--danger)); }
+
+/* ── lg-logo-pill (sidebar) ─────────────────────────────────── */
+.lg-logo-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 5px;
+  background: rgb(var(--gold) / .10);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgb(var(--gold) / .30);
+  border-radius: 50px;
+  box-shadow: var(--inset);
+}
+.lg-logo-brand-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-hex), var(--accent-strong-hex));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(var(--accent-text));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.20);
+  flex-shrink: 0;
+}
+.lg-logo-brand-text {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(var(--text-primary) / .88);
+  letter-spacing: 0.01em;
+}
+.lg-logo-brand-sub {
+  font-family: 'Geist Mono', monospace;
+  font-size: 9px;
+  color: rgb(var(--gold) / .45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 14px 0;
+}
+
+/* ── lg-gsub (greeting subtitle) ───────────────────────────── */
+.lg-gsub {
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  color: rgb(var(--text-muted));
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive mobile (< 640px) ───────────────────────────── */
+@media (max-width: 639px) {
+  .lg-greeting {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem !important;
+  }
+
+  .lg-card {
+    padding: 1rem;
+  }
+
+  .lg-step {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .lg-row {
+    padding: 9px 12px;
+  }
+
+  .lg-card-header {
+    margin-bottom: 10px;
+  }
+
+  /* Masquer scrollbar sur le scroll horizontal des actions */
+  .overflow-x-auto::-webkit-scrollbar { display: none; }
+}

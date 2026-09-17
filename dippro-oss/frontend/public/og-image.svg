@@ -1,0 +1,105 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg1" cx="15%" cy="70%" r="55%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0a0805" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="80%" cy="20%" r="45%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#B48C46" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0a0805" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8A96E"/>
+      <stop offset="100%" stop-color="#D4B97A"/>
+    </linearGradient>
+    <linearGradient id="pill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#C8A96E" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0805"/>
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#C8A96E" stroke-opacity="0.04" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#C8A96E" stroke-opacity="0.04" stroke-width="1"/>
+
+  <!-- Top border line (gold) -->
+  <rect x="0" y="0" width="1200" height="2" fill="url(#gold)" opacity="0.6"/>
+
+  <!-- Logo pill -->
+  <rect x="80" y="60" width="160" height="40" rx="20" fill="url(#pill)" stroke="#C8A96E" stroke-opacity="0.2" stroke-width="0.5"/>
+  <!-- D icon -->
+  <rect x="88" y="68" width="24" height="24" rx="6" fill="#C8A96E" fill-opacity="0.15" stroke="#C8A96E" stroke-opacity="0.4" stroke-width="0.5"/>
+  <text x="100" y="84" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#C8A96E" text-anchor="middle">D</text>
+  <!-- DIPpro text -->
+  <text x="127" y="85" font-family="Georgia, serif" font-size="15" font-weight="400" letter-spacing="0.5" fill="#F4F2EE">DIPpro</text>
+  <!-- by Iralink -->
+  <text x="80" y="122" font-family="system-ui, sans-serif" font-size="11" fill="#C8A96E" fill-opacity="0.6" letter-spacing="1.5">BY IRALINK</text>
+
+  <!-- Main headline -->
+  <text x="80" y="240" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="300" fill="#F4F2EE" letter-spacing="-1">Gestion légale du DIP</text>
+  <text x="80" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="300" letter-spacing="-1">
+    <tspan fill="#C8A96E">franchise</tspan>
+    <tspan fill="#F4F2EE"> — automatisée.</tspan>
+  </text>
+
+  <!-- Subline -->
+  <text x="80" y="374" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="300" fill="#F4F2EE" fill-opacity="0.55" letter-spacing="0.2">Conformité Loi Doubin · Analyse IA en 30s · Attestation SHA-256</text>
+
+  <!-- Score badge -->
+  <rect x="80" y="420" width="220" height="50" rx="12" fill="url(#pill)" stroke="#C8A96E" stroke-opacity="0.25" stroke-width="0.5"/>
+  <text x="150" y="451" font-family="Georgia, serif" font-size="28" font-weight="400" fill="#C8A96E" text-anchor="middle">94</text>
+  <text x="170" y="451" font-family="system-ui, sans-serif" font-size="13" fill="#C8A96E" fill-opacity="0.6">/100</text>
+  <text x="200" y="445" font-family="system-ui, sans-serif" font-size="11" fill="#F4F2EE" fill-opacity="0.45">Score</text>
+  <text x="200" y="459" font-family="system-ui, sans-serif" font-size="11" fill="#F4F2EE" fill-opacity="0.45">conformité</text>
+
+  <!-- Feature chips -->
+  <rect x="320" y="420" width="160" height="50" rx="12" fill="#C8A96E" fill-opacity="0.07" stroke="#C8A96E" stroke-opacity="0.18" stroke-width="0.5"/>
+  <text x="400" y="441" font-family="system-ui, sans-serif" font-size="11" fill="#C8A96E" text-anchor="middle" letter-spacing="0.5">⚡ ANALYSE IA</text>
+  <text x="400" y="458" font-family="system-ui, sans-serif" font-size="13" fill="#F4F2EE" text-anchor="middle" fill-opacity="0.7">30 secondes</text>
+
+  <rect x="496" y="420" width="160" height="50" rx="12" fill="#C8A96E" fill-opacity="0.07" stroke="#C8A96E" stroke-opacity="0.18" stroke-width="0.5"/>
+  <text x="576" y="441" font-family="system-ui, sans-serif" font-size="11" fill="#C8A96E" text-anchor="middle" letter-spacing="0.5">🔐 CERTIFIÉ</text>
+  <text x="576" y="458" font-family="system-ui, sans-serif" font-size="13" fill="#F4F2EE" text-anchor="middle" fill-opacity="0.7">SHA-256</text>
+
+  <rect x="672" y="420" width="160" height="50" rx="12" fill="#C8A96E" fill-opacity="0.07" stroke="#C8A96E" stroke-opacity="0.18" stroke-width="0.5"/>
+  <text x="752" y="441" font-family="system-ui, sans-serif" font-size="11" fill="#C8A96E" text-anchor="middle" letter-spacing="0.5">🇫🇷 LOI DOUBIN</text>
+  <text x="752" y="458" font-family="system-ui, sans-serif" font-size="13" fill="#F4F2EE" text-anchor="middle" fill-opacity="0.7">Art. L.330-3</text>
+
+  <!-- Right: mockup card -->
+  <rect x="820" y="100" width="300" height="400" rx="16" fill="#111010" fill-opacity="0.9" stroke="#C8A96E" stroke-opacity="0.12" stroke-width="0.5"/>
+  <!-- card header -->
+  <rect x="820" y="100" width="300" height="48" rx="16" fill="#C8A96E" fill-opacity="0.07"/>
+  <rect x="820" y="132" width="300" height="16" rx="0" fill="#C8A96E" fill-opacity="0.07"/>
+  <text x="840" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#C8A96E" fill-opacity="0.7" letter-spacing="0.8">CONFORMITÉ DIP</text>
+  <!-- Score arc simulation with lines -->
+  <text x="970" y="230" font-family="Georgia, serif" font-size="52" font-weight="300" fill="#C8A96E" text-anchor="middle">94%</text>
+  <text x="970" y="256" font-family="system-ui, sans-serif" font-size="10" fill="#F4F2EE" fill-opacity="0.4" text-anchor="middle">SCORE DE CONFORMITÉ</text>
+  <!-- Section list -->
+  <rect x="840" y="278" width="180" height="6" rx="3" fill="#C8A96E" fill-opacity="0.3"/>
+  <text x="840" y="275" font-family="system-ui, sans-serif" font-size="9" fill="#4CAF80" fill-opacity="0.8">✓ Présentation du réseau</text>
+  <rect x="840" y="300" width="200" height="6" rx="3" fill="#C8A96E" fill-opacity="0.25"/>
+  <text x="840" y="297" font-family="system-ui, sans-serif" font-size="9" fill="#4CAF80" fill-opacity="0.8">✓ État général du marché</text>
+  <rect x="840" y="322" width="140" height="6" rx="3" fill="#C8A96E" fill-opacity="0.25"/>
+  <text x="840" y="319" font-family="system-ui, sans-serif" font-size="9" fill="#4CAF80" fill-opacity="0.8">✓ Présentation du franchiseur</text>
+  <rect x="840" y="344" width="160" height="6" rx="3" fill="#ef4444" fill-opacity="0.3"/>
+  <text x="840" y="341" font-family="system-ui, sans-serif" font-size="9" fill="#ef4444" fill-opacity="0.7">⚠ Annexes financières</text>
+  <rect x="840" y="366" width="120" height="6" rx="3" fill="#C8A96E" fill-opacity="0.2"/>
+  <text x="840" y="363" font-family="system-ui, sans-serif" font-size="9" fill="#C8A96E" fill-opacity="0.6">○ Réseau de franchisés</text>
+  <!-- CTA button simulation -->
+  <rect x="840" y="400" width="260" height="34" rx="8" fill="#C8A96E" fill-opacity="0.15" stroke="#C8A96E" stroke-opacity="0.3" stroke-width="0.5"/>
+  <text x="970" y="421" font-family="system-ui, sans-serif" font-size="11" fill="#C8A96E" text-anchor="middle" letter-spacing="0.5">GÉNÉRER L'ATTESTATION →</text>
+  <!-- card dots -->
+  <circle cx="840" cy="116" r="4" fill="#ef4444" fill-opacity="0.6"/>
+  <circle cx="855" cy="116" r="4" fill="#f59e0b" fill-opacity="0.6"/>
+  <circle cx="870" cy="116" r="4" fill="#22c55e" fill-opacity="0.6"/>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#C8A96E" fill-opacity="0.04"/>
+  <text x="80" y="614" font-family="system-ui, sans-serif" font-size="12" fill="#C8A96E" fill-opacity="0.5">dippro.business</text>
+  <text x="1120" y="614" font-family="system-ui, sans-serif" font-size="12" fill="#C8A96E" fill-opacity="0.5" text-anchor="end">Accès anticipé ouvert</text>
+</svg>

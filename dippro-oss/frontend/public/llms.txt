@@ -1,0 +1,71 @@
+# DIPpro by Iralink
+
+> DIPpro est un logiciel SaaS B2B pour cabinets d'avocats en droit de la franchise. Il centralise la conformité légale du Document d'Information Précontractuelle (DIP) de tous leurs clients franchiseurs, obligatoire selon la Loi Doubin (Art. L.330-3 Code de commerce, R.330-1 C. com. dans sa version en vigueur au 1er janvier 2024, modifiée par le décret n°2023-1394 du 30 décembre 2023).
+
+## Qu'est-ce que DIPpro ?
+
+DIPpro est une plateforme de conformité DIP pour cabinets d'avocats qui :
+- Centralise le score de conformité de chaque client franchiseur, et la moyenne de tout le portefeuille, recalculés en direct
+- Fait repasser chaque édition d'un client franchiseur par la confirmation de l'avocat avant qu'elle ne compte comme conforme (blocage strict ou simple alerte, configurable par client)
+- Analyse automatiquement un DIP par intelligence artificielle (Claude Opus) en moins de 30 secondes, à partir d'un PDF ou DOCX importé par le client
+- Regroupe DIP, sections, annexes et certificats de tous les clients dans une arborescence unique
+- Envoie un compte-rendu automatique (analyse programmée de tous les clients, par email)
+- Génère une attestation PDF horodatée avec empreinte SHA-256 et numérotation séquentielle (preuve de remise et de validation incontestable)
+- Surveille en temps réel les sources légales (Légifrance, FFF) pour détecter les changements réglementaires impactant le DIP
+
+## Cadre légal couvert
+
+- **Loi Doubin** (Loi n° 89-1008 du 31 décembre 1989) — Art. L.330-3 Code de commerce
+- **R.330-1 C. com.** (décret n°2023-1394 du 30 décembre 2023) — contenu obligatoire du DIP (10 sections)
+- **Obligation de délai** : le DIP doit être remis 20 jours minimum avant signature du contrat de franchise
+- **Jurisprudence — pas de nullité automatique** : Cass. com., 20 mars 2007 (n°06-11.290) — un DIP absent ou inexact n'entraîne PAS mécaniquement la nullité ; le franchisé doit démontrer que le manquement a vicié son consentement
+- **Jurisprudence — obligation continue** : Cass. com., 26 juin 2024 (n°23-14.085) — l'obligation d'information court jusqu'à la signature. Un franchiseur dont le DIP était par ailleurs conforme a été condamné pour avoir tu des procédures collectives survenues entre la remise du DIP et la signature (réticence dolosive). Cet arrêt ne pose pas une règle « DIP inexact = nullité »
+- **RGPD** — hébergement Europe, audit log immuable, chiffrement TLS
+
+## À qui s'adresse DIPpro ?
+
+Aux **cabinets d'avocats en droit de la franchise** qui accompagnent des clients franchiseurs devant remettre un DIP conforme à chaque candidat franchisé au moins 20 jours avant la signature du contrat. Un compte franchiseur ne se crée plus en libre-service : il est ouvert uniquement sur invitation de son avocat, sans mot de passe à définir. Le non-respect du délai est puni d'une amende contraventionnelle de 5e classe (art. R.330-2 C. com.) et peut, si le franchisé démontre un vice du consentement, entraîner la nullité du contrat de franchise.
+
+Secteurs des clients franchiseurs accompagnés : restauration, immobilier, beauté/coiffure, fitness, services B2B, retail.
+
+## Fonctionnalités principales
+
+1. **Vue portefeuille** — score de conformité de chaque client et moyenne du portefeuille, en direct
+2. **Validation avocat** — chaque modification d'un client repasse par confirmation avant de compter comme conforme
+3. **Upload & Analyse IA** — PDF ou DOCX importé par le client, 10 sections extraites et scorées en 30s
+4. **Dossier par client** — DIP, sections, annexes et certificats dans une arborescence unique
+5. **Compte-rendu automatique** — analyse programmée de tous les clients, envoyée par email
+6. **Export PDF certifié** — attestation horodatée SHA-256, numérotation séquentielle
+7. **Historique des versions** — traçabilité complète pour audit ou litige
+8. **Doc Monitoring** — veille réglementaire automatique sur les sources légales
+9. **DIPpro Copilot** — assistant IA intégré capable d'effectuer des actions (valider alertes, checkup, consulter clients)
+10. **Multi-thèmes** — interface adaptative (5 thèmes visuels)
+
+## Tarification
+
+- 1 300 € de mise en place, une seule fois
+- Abonnement mensuel par paliers selon le nombre de clients franchiseurs suivis : 850 €/mois (1-5 clients), 1 450 €/mois (6-15), 2 200 €/mois (16-30), sur devis au-delà
+- Première analyse offerte, aucune carte bancaire requise
+- Onboarding personnalisé inclus
+
+## Éditeur
+
+**Iralink Agency** — theo@iralink-agency.com
+Éditeur de la plateforme DIPpro, accessible à l'adresse https://iralink-agency.dippro.business
+Base de données hébergée en Europe (AWS eu-west / Supabase). Certains sous-traitants (analyse IA, hébergement applicatif) sont situés hors UE et encadrés par des clauses contractuelles types.
+
+## Pages importantes
+
+- Site principal : https://iralink-agency.dippro.business/
+- Base des litiges DIP (ressource gratuite, avocats) : https://iralink-agency.dippro.business/ressources/litiges-dip
+- Blog — guides et analyses juridiques : https://iralink-agency.dippro.business/blog
+- Accès anticipé / liste d'attente : https://iralink-agency.dippro.business/waitlist
+- Créer un compte avocat : https://iralink-agency.dippro.business/register
+- Connexion : https://iralink-agency.dippro.business/login
+- CGU : https://iralink-agency.dippro.business/cgu
+- Politique de confidentialité : https://iralink-agency.dippro.business/privacy
+- Mentions légales : https://iralink-agency.dippro.business/mentions-legales
+
+## Mots-clés SEO principaux
+
+Avocat droit de la franchise, conformité DIP avocat, cabinet avocat franchise, DIP franchise, Document d'Information Précontractuelle, Loi Doubin, logiciel DIP franchise, conformité franchise France, analyse DIP IA, DIP automatique, Art. L.330-3 Code de commerce, R.330-1, DIPpro, Iralink
